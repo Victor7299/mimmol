@@ -48,7 +48,15 @@ class Program(ASTNode):
         return ''.join(out)
 
 class Identifier(Expression):
-    pass
+    
+    def __init__(self,
+                token: Token,
+                value: str) -> None:
+        super().__init__(token)
+        self.value = value
+
+    def __str__(self) -> str:
+        return self.value
 
 class LetStatement(Statement):
     def __init__(self,
@@ -60,4 +68,4 @@ class LetStatement(Statement):
         self.value = value
 
     def __str__(self) -> str:
-        return f'{self.token.token_literal()} {str(self.nombre)} = {str(self.value)}'
+        return f'{self.token_literal()} {str(self.name)} = {str(self.value)}'
