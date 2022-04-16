@@ -2,7 +2,7 @@ from unittest import TestCase
 from typing import cast, List
 from jal.lexer import Lexer
 from jal.parser import Parser
-from jal.ast import Program, LetStatement
+from jal.ast import Program, LetStatement, ReturnStatement
 
 
 
@@ -44,3 +44,25 @@ class TestParser(TestCase):
 
         self.assertEqual(names, expected_names)
     
+    def test_parser_error(self) -> None:
+        source: str = 'let five 5;'
+        lexer: Lexer = Lexer(source)
+        parser: Parser = Parser(lexer)
+
+        program: Program = parser.parse_program()
+        self.assertEqual(len(parser.errors), 1)
+
+    def test_return_statement(self) -> None:
+        source: str = '''
+            return 5;
+            return foo;
+        '''
+        lexer: Lexer = Lexer(source)
+        parser: Parser = Parser(lexer)
+
+        program: Program = parser.parse_program()
+
+        self.assertEquals(len(program.statements), 2)
+        for statement in program.statements:
+            self.assertEqual(statement.token_literal(), 'return')
+            self.assertIsInstance(statement, ReturnStatement)
