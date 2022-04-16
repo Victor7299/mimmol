@@ -1,8 +1,8 @@
 from unittest import TestCase
 from typing import cast, List
-from jal.lexer import Lexer
-from jal.parser import Parser
-from jal.ast import Program, LetStatement, ReturnStatement
+from mimmol.lexer import Lexer
+from mimmol.parser import Parser
+from mimmol.ast import Program, LetStatement, ReturnStatement
 
 
 

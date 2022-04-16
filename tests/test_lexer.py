@@ -1,11 +1,11 @@
 from unittest import TestCase
 from typing import List
 
-from jal.tokens import (
+from mimmol.tokens import (
     Token,
     TokenType,
 )
-from jal.lexer import Lexer
+from mimmol.lexer import Lexer
 
 class TestLexer(TestCase):
     

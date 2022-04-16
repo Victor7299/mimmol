@@ -1,5 +1,5 @@
-from jal.lexer import Lexer
-from jal.tokens import Token, TokenType
+from mimmol.lexer import Lexer
+from mimmol.tokens import Token, TokenType
 
 EOF_TOKEN: Token = Token(TokenType.EOF, '')
 

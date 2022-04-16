@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
 
-from jal.tokens import Token
+from mimmol.tokens import Token
 
 
 class ASTNode(ABC):

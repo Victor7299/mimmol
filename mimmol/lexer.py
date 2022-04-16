@@ -1,6 +1,6 @@
 import re
 
-from jal.tokens import (
+from mimmol.tokens import (
     Token,
     TokenType,
     lookup_token_type,

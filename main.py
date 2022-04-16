@@ -1,4 +1,4 @@
-from jal.repl import start_repl
+from mimmol.repl import start_repl
 
 def main() -> None:
     print('JAL Programming Language')

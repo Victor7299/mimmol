@@ -1,7 +1,7 @@
 from unittest import TestCase
 
-from jal.ast import Identifier, LetStatement, Program, ReturnStatement
-from jal.tokens import Token, TokenType
+from mimmol.ast import Identifier, LetStatement, Program, ReturnStatement
+from mimmol.tokens import Token, TokenType
 
 class TestAST(TestCase):
     

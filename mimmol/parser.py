@@ -1,5 +1,5 @@
 from typing import Optional, List, Callable, Dict
-from jal.ast import (
+from mimmol.ast import (
     Expression,
     Identifier,
     LetStatement,
@@ -7,8 +7,8 @@ from jal.ast import (
     ReturnStatement,
     Statement,
 )
-from jal.lexer import Lexer
-from jal.tokens import Token, TokenType
+from mimmol.lexer import Lexer
+from mimmol.tokens import Token, TokenType
 
 PrefixParseFn = Callable[[], Optional[Expression]]
 InfixParseFn = Callable[[Expression], Optional[Expression]]
